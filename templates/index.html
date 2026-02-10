@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed - Home</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SEED</div>
+
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{{ url_for('check') }}">Check</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="welcome">Welcome to Seed</p>
+            <h1>WE'RE CREATING HEALTHY SEEDS</h1>
+            <p class="subtitle">Detecting the proper seed for the use!!</p>
+
+            <div class="form-container" style="background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 10px; margin-top: 20px; color: #333;">
+                <h3 style="margin-bottom: 15px;">Enter Seed Details</h3>
+                <form action="/predict" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: left;">
+                    
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Area</label>
+                        <input type="text" name="Area" placeholder="e.g. 63800" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Perimeter</label>
+                        <input type="text" name="Perimeter" placeholder="e.g. 980.5" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Major Axis Length</label>
+                        <input type="text" name="Major_Axis_Length" placeholder="e.g. 400.2" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Minor Axis Length</label>
+                        <input type="text" name="Minor_Axis_Length" placeholder="e.g. 200.1" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Convex Area</label>
+                        <input type="text" name="Convex_Area" placeholder="e.g. 64000" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Equiv Diameter</label>
+                        <input type="text" name="Equiv_Diameter" placeholder="e.g. 280.5" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Eccentricity</label>
+                        <input type="text" name="Eccentricity" placeholder="e.g. 0.85" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Solidity</label>
+                        <input type="text" name="Solidity" placeholder="e.g. 0.98" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Extent</label>
+                        <input type="text" name="Extent" placeholder="e.g. 0.75" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Roundness</label>
+                        <input type="text" name="Roundness" placeholder="e.g. 0.88" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Aspect Ratio</label>
+                        <input type="text" name="Aspect_Ration" placeholder="e.g. 1.5" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.9em; font-weight: bold;">Compactness</label>
+                        <input type="text" name="Compactness" placeholder="e.g. 0.70" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+
+                    <div style="grid-column: span 2; text-align: center; margin-top: 10px;">
+                        <button type="submit" class="btn" style="width: 50%; cursor: pointer;">Predict Seed Class</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
